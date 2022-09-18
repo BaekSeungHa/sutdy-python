@@ -1,0 +1,453 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/BaekSeungHa/sutdy-python/blob/main/AI_Class\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IgU4y4cdCo3v"
+      },
+      "source": [
+        "#  1. 조건문 if\n",
+        "\n",
+        "**조건문 : 조건을 충족할 때에만 선택적으로 실행되는 명령어**\n",
+        "</br>\n",
+        "**=선택구조**\n",
+        "</br>\n",
+        "\n",
+        "\n",
+        "```\n",
+        "조건 A를 충족할 때에만\n",
+        "B해라\n",
+        "\n",
+        "ex. 만 65세 이상만 경로우대 대상으로 해라\n",
+        "```\n",
+        "\n",
+        "<img src = 'https://github.com/teacher-jiejie/allinone_AI/blob/images/71_if.png?raw=true' width=500>\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MkpSM5DyCp78",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "2531b443-635e-4acd-d85c-0572d9d0a3d6"
+      },
+      "source": [
+        "# 만약 65세 이상이라면 경로우대 대상이라고 출력(조건을 충족할 때만 실행)\n",
+        "age = int(input())\n",
+        "\n",
+        "if age >=65 :\n",
+        "  print(\"경로우대 대상\")\n",
+        "\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "65\n",
+            "경로우대 대상\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "iIllPy22YGxI"
+      },
+      "source": [
+        "> 조건문에서는 들여쓰기를 조심하세요!\n",
+        "</br>\n",
+        "<img src ='https://github.com/teacher-jiejie/allinone_AI/blob/images/10_%EC%84%A0%ED%83%9D%EA%B5%AC%EC%A1%B0%20%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0%20png.png?raw=true' width=200>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "vpkrmOpKIurV"
+      },
+      "source": [
+        "물건 금액을 입력받고 물건이 오만원 미만일 경우 배송비 2500원을 더해서 결제금액을 안내하시오. "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "F0zdyUHuCp_5",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "350c66b7-820c-4dc0-d56a-8bbe142f0595"
+      },
+      "source": [
+        "price = int(input(\"물건 가격 입력\"))\n",
+        "\n",
+        "if price < 50000 :\n",
+        "  price += 2500\n",
+        "\n",
+        "print(\"총 결제금액은 %d\" %price )\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "물건 가격 입력3\n",
+            "총 결제금액은 2503\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "A5d31d8QYY3s"
+      },
+      "source": [
+        "# 2. 조건을 만드는 비교연산자\n",
+        "\n",
+        "a와 b가 같다면\n",
+        "> if a == b :      \n",
+        "\n",
+        "</br>\n",
+        "\n",
+        "a와 b가 같지 않다면\n",
+        "\n",
+        "> if a != b :   \n",
+        "\n",
+        "</br>\n",
+        "</br>\n",
+        "\n",
+        "a가 b보다 크다면\n",
+        "> if a > b :     \n",
+        "\n",
+        "a가 b보다 크거나 같다면 \n",
+        "> if a >= b :      \n",
+        "\n",
+        "a가 b보다 작다면\n",
+        "> if a < b :        \n",
+        "\n",
+        "a가 b보다 작거나 같다면\n",
+        "> if a <= b :      \n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "pC042qGEkl4T"
+      },
+      "source": [
+        "출석 혹은 결석 둘 중 하나를 입력받고, 출석을 입력받았을 경우 O를 출력하기"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MkSuyWQ5eFKC",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "bea47239-0bd0-4f45-d142-96460933dc59"
+      },
+      "source": [
+        "check = input(\"출석 혹은 결석을 입력하세요\")\n",
+        "if check == \"출석\" :\n",
+        "  print(0)\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "출석 혹은 결석을 입력하세요 출석출석\n",
+            "0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "NyCBjh41EVVn"
+      },
+      "source": [
+        "# 3. if-else 조건문\n",
+        "조건을 충족하지 않을 때 실행하는 명령어\n",
+        "\n",
+        "\n",
+        "```\n",
+        "만약 조건 A라면, \n",
+        "    B해라\n",
+        "그렇지 않으면,\n",
+        "    C해라\n",
+        "```\n",
+        "\n",
+        "<img src = 'https://github.com/teacher-jiejie/allinone_AI/blob/images/70_else.png?raw=true' width=400>\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kLlhbmxaU5Br"
+      },
+      "source": [
+        "자동 출석 시스템 \n",
+        "```\n",
+        "출석 혹은 결석을 입력받아 출석이면 O을 출력, 출석이 아니면 X를 출력하기\n",
+        "입력안내문 : 출석 혹은 결석을 입력하세요\n",
+        "```\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7TAwKdmcTpUu",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "eda069a0-cc54-4e6f-c0ee-9c79e078461b"
+      },
+      "source": [
+        "check = input(\"출석 혹은 결석을 입력하세요\")\n",
+        "\n",
+        "if check == \"출석\":\n",
+        "  print(\"O\")\n",
+        "  \n",
+        "else:\n",
+        "    print(\"X\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "출석 혹은 결석을 입력하세요출석\n",
+            "O\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "H3lACF-xoWgO"
+      },
+      "source": [
+        "무인계산기 프로그램\n",
+        "\n",
+        "\n",
+        "```\n",
+        "놀이공원에서 무인계산기를 설치했다. \n",
+        "성인 요금은 15000원, 미성년자 요금은 6000원이다. \n",
+        "나이를 입력받아 성인이면 price(요금을 저장하는 변수)에 15000을, 미성년자라면 6000을 저장하고 출력하기 \n",
+        "```\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ADkXah-ynI6P",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "86de61d3-e6e0-46e9-eac5-2f78bd614693"
+      },
+      "source": [
+        "#입력받을 때는 문자열로 받아지기 때문에 자료형을 표시해두어야 함\n",
+        "age = int(input(\"나이가 어떻게 되세요?\"))\n",
+        "\n",
+        "if age >= 20:\n",
+        "  price = 15000\n",
+        "  print(\"성인은\", price, \"원입니다\")\n",
+        "else:\n",
+        "  price = 6000\n",
+        "  print(\"미성년자는\", price, \"원입니다\") \n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "나이가 어떻게 되세요?20\n",
+            "성인은 15000 원입니다\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "dB3x0QJuxCgB"
+      },
+      "source": [
+        "# 4. elif 조건문\n",
+        "\n",
+        "<img src='https://github.com/teacher-jiejie/allinone_AI/blob/images/68_elif.png?raw=true' width=400>\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2mnojcUty6z7"
+      },
+      "source": [
+        "최저 주문금액이 있는 새벽배송 \n",
+        "\n",
+        "\n",
+        "```\n",
+        "- 최저 구매금액이 2만 원 \n",
+        "- 5만 원 미만은 배송비 2500원 추가\n",
+        "- 5만 원 이상 이면 무료배송\n",
+        "\n",
+        "구매금액을 입력받아 조건 별로 \n",
+        "- '새벽배송이 불가합니다.'\n",
+        "- '배송비 2500원이 추가됩니다.'\n",
+        "- '무료배송됩니다.'\n",
+        "중 하나를 출력하기\n",
+        "```\n",
+        "\n",
+        "<img src='https://github.com/teacher-jiejie/allinone_AI/blob/images/67_elif.png?raw=true' width=600>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wVJyrAfb30ah",
+        "outputId": "12f89ca2-588d-48cf-c99c-ef912868ff49"
+      },
+      "source": [
+        "price = int(input(\"구매금액은?\"))\n",
+        "\n",
+        "if price < 20000:\n",
+        "  print(\"새벽배송이 불가합니다.\")\n",
+        "elif price < 50000:\n",
+        "  print(\"배송비 2500원이 추가됩니다\")\n",
+        "else:\n",
+        "  print(\"무료배송됩니다.\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "구매금액은?1\n",
+            "새벽배송이 불가합니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "패스워드 확인 프로그램\n",
+        ">비밀번호 = 1234, 아래에 조건에 따라 출력하기\n",
+        ">\n",
+        ">비밀번호가 맞을 경우-> '로그인이 되었습니다'\n",
+        ">\n",
+        ">비밀번호가 틀릴 경우-> '비밀번호가 틀렸습니다.',  '비밀번호를 확인해주세요.' \n",
+        ">\n",
+        ">\n",
+        "(파이썬에서는 문단 구분을 들여쓰기로 하면 중괄호 필요없이 여러줄 실행 가능)"
+      ],
+      "metadata": {
+        "id": "6X8LRjvY4Ukb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pw = int(input())\n",
+        "\n",
+        "if pw == 1234:\n",
+        "  print(\"로그인이 되었습니다\")\n",
+        "else:\n",
+        "  print(\"비밀번호가 틀렸습니다.\")\n",
+        "  print(\"비밀번호를 확인해주세요\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "taz579hV4gYH",
+        "outputId": "b0ba39a6-8713-47f3-8b32-20402c1ea60a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "4\n",
+            "비밀번호가 틀렸습니다.\n",
+            "비밀번호를 확인해주세요\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
